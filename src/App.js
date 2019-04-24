@@ -45,7 +45,7 @@ class App extends React.Component {
       <div>
         <TodoList data={this.state.data}/>
 
-        <TodoForm value={this.state.item} handleAddItem={this.addItem} handleItemChanhe={this.updateItem}/>
+        <TodoForm value={this.state.item} handleAddItem={this.addItem} handleItemUpdate={this.updateItem}/>
       </div>
     );
   }
