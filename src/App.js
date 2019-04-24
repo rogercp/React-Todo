@@ -32,6 +32,12 @@ class App extends React.Component {
       item:'',
     });
   };
+
+  updateItem=items=>{
+    this.setState({
+      [items.target.name]:items.target.value}
+      );
+    }
   
 
   render() {
@@ -39,7 +45,7 @@ class App extends React.Component {
       <div>
         <TodoList data={this.state.data}/>
 
-        <TodoForm value={this.state.item}/>
+        <TodoForm value={this.state.item} handleAddItem={this.addItem} handleItemChanhe={this.updateItem}/>
       </div>
     );
   }

@@ -1,8 +1,7 @@
 // your components will all go in this `component` directory.
 // feel free to change this component.js into TodoList.js
 import React from 'react';
-import Todo from './item';
-import Item from './item';
+import Instance from './Instance';
 
 
 
@@ -10,9 +9,9 @@ const  TodoList = props =>{
     return (
         <div>
             {
-                props.data.map(item=>{
-                    <Item />
-                })
+                props.data.map(item=>(
+                    <Instance key={item.id} item={item}/>
+                ))
             }
         </div>
     

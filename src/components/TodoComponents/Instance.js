@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Item = props => {
+const Instance = props => {
     return (
         <div>
             {props.item.task}
@@ -9,4 +9,4 @@ const Item = props => {
     
     );
 }
-export default Item;
+export default Instance;
