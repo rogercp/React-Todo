@@ -1,10 +1,22 @@
 import React from 'react';
-
+import './Todo.css';
 
 const Instance = props => {
+
+    let classNames="item";
+    if(props.item.completed){
+        classNames+="completed"
+    }
+
+
+    function updateCompleted(){
+        props.completedItems(props.item.id);
+    }
+
+
     return (
-        <div>
-            {props.item.task}
+        <div className={classNames} onClick={updateCompleted}>
+            {props.item.name}
         </div>
     
     );

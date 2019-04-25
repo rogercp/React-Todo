@@ -1,8 +1,9 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
-import TodoList from './components/TodoComponents/TodoList'
+import TodoList from './components/TodoComponents/TodoList';
+import './components/TodoComponents/Todo.css';
 
-const myData=[
+const data=[
   {
     task: 'Organize Garage',
     id: 1528817077286,
@@ -15,41 +16,68 @@ const myData=[
   }
 ];
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state={
-      data:myData,
-       item:'',
-    };
-  }
 
-  addItem = items =>{
-    items.preventDefault();
-    const newItems={task:this.state.item, id:Date.now()};
-    this.setState({
-      data:[...this.state.data, newItems],
-      item:'',
-    });
-  };
 
-  updateItem=items=>{
-    this.setState({
-      [items.target.name]:items.target.value}
-      );
-    }
-  
 
-  render() {
-    return (
-      <div>
-        <TodoList data={this.state.data}/>
 
-        <TodoForm value={this.state.item} handleAddItem={this.addItem} handleItemUpdate={this.updateItem}/>
-      </div>
-    );
-  }
-}
+        class App extends React.Component {
+          constructor() {
+            super();
+            this.state={
+              data
+            };
+          }
+              
+              
+              
+              addItem=item=>{
+            this.setState({
+              data:[
+                ...this.state.data,
+                {name:item, completed:false, id:Date.now()}
+              ]
+            })
+          }
+
+              completedItems=id=>{
+                this.setState({
+                  data:this.state.data.map(item=>
+                    item.id===id ? {...item, purchased: !item.purchased} :item)
+                });
+              }
+
+              
+              completedDataClear=()=>{
+                this.setState({
+                  data:this.state.data.filter(item=>!item.completed)
+                });
+              }
+
+              
+          
+
+          render() {
+            
+            return (
+              <div className="app">
+                <h1 className="title">To Do List</h1>
+                <div>
+                <TodoList 
+                data={this.state.data}
+                completedItems={this.completedItems}
+                />
+                </div>
+              <div>
+              <TodoForm
+                    addItem={this.addItem}                 
+      
+                />
+              </div>
+                <button onClick={this.completedDataClear}>Clear Completed</button>
+              </div>
+            )
+          }
+        }
 
 
 export default App;
