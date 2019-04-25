@@ -30,7 +30,7 @@ constructor(props){
             <input 
                 type="text" 
                 placeholder="......todoList" 
-                id="item-item"
+                id="new-item"
                 value={this.state.item} 
                 name="item" 
                 onChange={this.onUpdate}

@@ -42,7 +42,7 @@ const data=[
               completedItems=id=>{
                 this.setState({
                   data:this.state.data.map(item=>
-                    item.id===id ? {...item, purchased: !item.purchased} :item)
+                    item.id===id ? {...item, completed: !item.completed} :item)
                 });
               }
 

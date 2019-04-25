@@ -5,7 +5,7 @@ const Instance = props => {
 
     let classNames="item";
     if(props.item.completed){
-        classNames+="completed"
+        classNames += "completed";
     }
 
 
