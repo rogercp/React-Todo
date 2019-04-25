@@ -20,9 +20,6 @@ constructor(props){
         this.setState({item:''})
     }
 
-    
-    
-
 
     render(){
     return (

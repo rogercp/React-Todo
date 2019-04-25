@@ -37,6 +37,9 @@ button{
     background-color:rgba(187, 177, 177, 0.954);
    max-width: 100%;
    color: white;
+   border-bottom:1px black ;
+   height: 15px;
+   padding: 2px;
   }
 
 .item.completed {
