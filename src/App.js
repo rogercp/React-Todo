@@ -31,10 +31,10 @@ const data=[
               
               
               addItem=item=>{
-            this.setState({
-              data:[
-                ...this.state.data,
-                {name:item, completed:false, id:Date.now()}
+              this.setState({
+                data:[
+                  ...this.state.data,
+                  {task:item, id:Date.now(),completed:false }
               ]
             })
           }
@@ -60,19 +60,19 @@ const data=[
             
             return (
               <div className="app">
-                <h1 className="title">To Do List</h1>
+                    <h1 className="title">To Do List</h1>
                 <div>
-                <TodoList 
-                data={this.state.data}
-                completedItems={this.completedItems}
-                />
+                    <TodoList 
+                    data={this.state.data}
+                    completedItems={this.completedItems}
+                    />
                 </div>
-              <div>
-              <TodoForm
-                    addItem={this.addItem}                 
-      
-                />
-              </div>
+                <div>
+                  <TodoForm
+                        addItem={this.addItem}                 
+                        
+                    />
+                </div>
                 <button onClick={this.completedDataClear}>Clear Completed</button>
               </div>
             )

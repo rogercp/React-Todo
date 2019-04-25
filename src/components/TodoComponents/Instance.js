@@ -16,7 +16,7 @@ const Instance = props => {
 
     return (
         <div className={classNames} onClick={updateCompleted}>
-            {props.item.name}
+            {props.item.task}
         </div>
     
     );
