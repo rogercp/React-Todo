@@ -1,0 +1,56 @@
+
+
+.app{
+    
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+
+   
+}
+
+.title{
+    text-align: center;
+}
+.item {
+    background-color: red;
+    width:100%;
+    margin: 2px;
+    color: white;
+    padding: 1px;
+  }
+
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+button{
+    width: 200px;
+    margin: 10px;
+    border-radius: 50px;
+    background: red;
+    color: white;
+}
+  form > input {
+    background-color:rgba(187, 177, 177, 0.954);
+   max-width: 100%;
+   color: white;
+   border-bottom:1px black ;
+   height: 15px;
+   padding: 2px;
+  }
+
+.item.completed {
+    text-decoration: line-through;
+   
+  }
+
+  .todo-list {
+    display: flex;
+    flex-flow: row wrap; 
+    justify-content: space-between;
+    width: 300px;
+    margin: 20px;
+  }
